@@ -1,0 +1,25 @@
+### Application
+POST http://localhost:5070/api/Actor
+
+### Application
+GET http://localhost:5070/api/Actor
+
+### Application
+DELETE http://localhost:5070/api/Actor
+
+
+
+### Dapr API
+POST http://localhost:3570/v1.0/actors/ReminderActor/reminderactor/reminders/reminder
+Content-Type: application/json
+
+{
+    "dueTime": "0h5m0s0ms",
+    "period": "1h0m0s0ms"
+}
+
+### Dapr API
+GET http://localhost:3570/v1.0/actors/ReminderActor/reminderactor/reminders/reminder
+
+### Dapr API
+DELETE http://localhost:3570/v1.0/actors/ReminderActor/reminderactor/reminders/reminder
