@@ -30,6 +30,13 @@ public class ReminderActor : Actor, IReminderActor, IRemindable
         var uri = new Uri("http://localhost:3570/v1.0/actors/ReminderActor/reminderactor/reminders/reminder");
         
         var response = await _client.SendAsync(new HttpRequestMessage(HttpMethod.Get, uri));
+        var responseContent = await response.Content.ReadAsStringAsync();
+
+        if (responseContent == "null")
+        {
+            return new { value = "no reminder present" };
+        }
+        
         var content = await response.Content.ReadAsStringAsync();
 
         return content;
